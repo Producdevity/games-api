@@ -22,13 +22,12 @@ export default [
           ignoreRestSiblings: true,
         },
       ],
-      '@typescript-eslint/prefer-nullish-coalescing': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
       'prefer-template': 'error',
     },
   },
   {
-    ignores: ['dist/', 'node_modules/'],
+    ignores: ['dist/', 'node_modules/', 'examples/'],
   },
 ]
