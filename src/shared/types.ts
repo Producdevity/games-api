@@ -128,7 +128,13 @@ export interface Publisher {
  */
 export interface GameImage {
   id: number
-  type: 'boxart' | 'fanart' | 'banner' | 'screenshot' | 'clearlogo' | 'titlescreen'
+  type:
+    | 'boxart'
+    | 'fanart'
+    | 'banner'
+    | 'screenshot'
+    | 'clearlogo'
+    | 'titlescreen'
   side?: 'front' | 'back'
   filename: string
   resolution?: string
@@ -285,22 +291,22 @@ export interface PublishersResponse extends BaseApiResponse {
 /**
  * Available fields for game requests (from TGDB spec)
  */
-export type GameFields = 
-  | 'players' 
-  | 'publishers' 
-  | 'genres' 
-  | 'overview' 
-  | 'last_updated' 
-  | 'rating' 
-  | 'platform' 
-  | 'coop' 
-  | 'youtube' 
-  | 'os' 
-  | 'processor' 
-  | 'ram' 
-  | 'hdd' 
-  | 'video' 
-  | 'sound' 
+export type GameFields =
+  | 'players'
+  | 'publishers'
+  | 'genres'
+  | 'overview'
+  | 'last_updated'
+  | 'rating'
+  | 'platform'
+  | 'coop'
+  | 'youtube'
+  | 'os'
+  | 'processor'
+  | 'ram'
+  | 'hdd'
+  | 'video'
+  | 'sound'
   | 'alternates'
 
 /**
@@ -311,26 +317,32 @@ export type GameIncludes = 'boxart' | 'platform'
 /**
  * Available fields for platform requests (from TGDB spec)
  */
-export type PlatformFields = 
-  | 'icon' 
-  | 'console' 
-  | 'controller' 
-  | 'developer' 
-  | 'manufacturer' 
-  | 'media' 
-  | 'cpu' 
-  | 'memory' 
-  | 'graphics' 
-  | 'sound' 
-  | 'maxcontrollers' 
-  | 'display' 
-  | 'overview' 
+export type PlatformFields =
+  | 'icon'
+  | 'console'
+  | 'controller'
+  | 'developer'
+  | 'manufacturer'
+  | 'media'
+  | 'cpu'
+  | 'memory'
+  | 'graphics'
+  | 'sound'
+  | 'maxcontrollers'
+  | 'display'
+  | 'overview'
   | 'youtube'
 
 /**
  * Available image types for filtering (from TGDB spec)
  */
-export type GameImageTypes = 'fanart' | 'banner' | 'boxart' | 'screenshot' | 'clearlogo' | 'titlescreen'
+export type GameImageTypes =
+  | 'fanart'
+  | 'banner'
+  | 'boxart'
+  | 'screenshot'
+  | 'clearlogo'
+  | 'titlescreen'
 export type PlatformImageTypes = 'fanart' | 'banner' | 'boxart'
 
 /**
@@ -374,9 +386,7 @@ export interface GamesApiClient {
   }): Promise<GamesUpdatesResponse>
 
   // Platforms endpoints
-  platforms(params?: {
-    fields?: string
-  }): Promise<PlatformsResponse>
+  platforms(params?: { fields?: string }): Promise<PlatformsResponse>
 
   platformsByPlatformId(params: {
     id: number
@@ -408,9 +418,9 @@ export class GamesApiError extends Error {
     message: string,
     public statusCode?: number,
     public provider?: Provider,
-    public originalError?: any
+    public originalError?: any,
   ) {
     super(message)
     this.name = 'GamesApiError'
   }
-} 
+}

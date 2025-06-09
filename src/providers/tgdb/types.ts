@@ -122,7 +122,13 @@ export interface TgdbPublisher {
  */
 export interface TgdbGameImage {
   id: number
-  type: 'boxart' | 'fanart' | 'banner' | 'screenshot' | 'clearlogo' | 'titlescreen'
+  type:
+    | 'boxart'
+    | 'fanart'
+    | 'banner'
+    | 'screenshot'
+    | 'clearlogo'
+    | 'titlescreen'
   side?: 'front' | 'back'
   filename: string
   resolution?: string
@@ -279,22 +285,22 @@ export interface TgdbPublishersResponse extends TgdbBaseApiResponse {
 /**
  * Available fields for game requests
  */
-export type TgdbGameFields = 
-  | 'players' 
-  | 'publishers' 
-  | 'genres' 
-  | 'overview' 
-  | 'last_updated' 
-  | 'rating' 
-  | 'platform' 
-  | 'coop' 
-  | 'youtube' 
-  | 'os' 
-  | 'processor' 
-  | 'ram' 
-  | 'hdd' 
-  | 'video' 
-  | 'sound' 
+export type TgdbGameFields =
+  | 'players'
+  | 'publishers'
+  | 'genres'
+  | 'overview'
+  | 'last_updated'
+  | 'rating'
+  | 'platform'
+  | 'coop'
+  | 'youtube'
+  | 'os'
+  | 'processor'
+  | 'ram'
+  | 'hdd'
+  | 'video'
+  | 'sound'
   | 'alternates'
 
 /**
@@ -305,24 +311,30 @@ export type TgdbGameIncludes = 'boxart' | 'platform'
 /**
  * Available fields for platform requests
  */
-export type TgdbPlatformFields = 
-  | 'icon' 
-  | 'console' 
-  | 'controller' 
-  | 'developer' 
-  | 'manufacturer' 
-  | 'media' 
-  | 'cpu' 
-  | 'memory' 
-  | 'graphics' 
-  | 'sound' 
-  | 'maxcontrollers' 
-  | 'display' 
-  | 'overview' 
+export type TgdbPlatformFields =
+  | 'icon'
+  | 'console'
+  | 'controller'
+  | 'developer'
+  | 'manufacturer'
+  | 'media'
+  | 'cpu'
+  | 'memory'
+  | 'graphics'
+  | 'sound'
+  | 'maxcontrollers'
+  | 'display'
+  | 'overview'
   | 'youtube'
 
 /**
  * Available image types for filtering
  */
-export type TgdbGameImageTypes = 'fanart' | 'banner' | 'boxart' | 'screenshot' | 'clearlogo' | 'titlescreen'
-export type TgdbPlatformImageTypes = 'fanart' | 'banner' | 'boxart' 
+export type TgdbGameImageTypes =
+  | 'fanart'
+  | 'banner'
+  | 'boxart'
+  | 'screenshot'
+  | 'clearlogo'
+  | 'titlescreen'
+export type TgdbPlatformImageTypes = 'fanart' | 'banner' | 'boxart'

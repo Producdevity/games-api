@@ -105,4 +105,3 @@ export class HttpClient {
     delete this.client.defaults.headers.common[key]
   }
 }
-
