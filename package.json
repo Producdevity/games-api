@@ -12,9 +12,7 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rollup --config",
     "dev": "rollup --config --watch",
@@ -25,14 +23,7 @@
     "format:check": "prettier --check .",
     "prepublishOnly": "npm run build && npm run lint && npm run typecheck"
   },
-  "keywords": [
-    "api",
-    "games",
-    "games-api",
-    "rawg",
-    "thegamesdb",
-    "wrapper"
-  ],
+  "keywords": ["api", "games", "games-api", "rawg", "thegamesdb", "wrapper"],
   "author": "Producdevity",
   "license": "MIT",
   "engines": {
