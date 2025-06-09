@@ -1,8 +1,8 @@
-import typescript from '@rollup/plugin-typescript';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import json from '@rollup/plugin-json';
-import dts from 'rollup-plugin-dts';
+import typescript from '@rollup/plugin-typescript'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
+import dts from 'rollup-plugin-dts'
 
 export default [
   // Main build
@@ -12,28 +12,28 @@ export default [
       {
         file: 'dist/index.cjs',
         format: 'cjs',
-        exports: 'named'
+        exports: 'named',
       },
       {
         file: 'dist/index.mjs',
-        format: 'es'
-      }
+        format: 'es',
+      },
     ],
     plugins: [
       resolve({ preferBuiltins: true }),
       commonjs(),
       json(),
-      typescript({ tsconfig: './tsconfig.json' })
+      typescript({ tsconfig: './tsconfig.json' }),
     ],
-    external: ['https', 'http', 'url', 'fs', 'path']
+    external: ['https', 'http', 'url', 'fs', 'path'],
   },
   // Type definitions
   {
     input: 'src/main.ts',
     output: {
       file: 'dist/index.d.ts',
-      format: 'es'
+      format: 'es',
     },
-    plugins: [dts()]
-  }
-];
+    plugins: [dts()],
+  },
+]
