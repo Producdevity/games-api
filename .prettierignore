@@ -1,0 +1,28 @@
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Generated files
+*.d.ts
+
+# Logs
+*.log
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage reports
+coverage/
+
+# Cache directories
+.cache/
+.eslintcache
+
+# Files that are auto-generated or shouldn't be formatted
+CHANGELOG.md
+LICENSE
