@@ -5,11 +5,12 @@
  * native TheGamesDB interface and response structures.
  */
 
+import 'dotenv/config'
 import { createTgdbClient, createGamesApiClient } from '../../src/main'
 
 async function main() {
   // Replace with your actual API key from https://thegamesdb.net/
-  const API_KEY = 'your-api-key-here'
+  const API_KEY = process.env.THE_GAMES_DB_API_KEY as string
 
   // Create client using the factory (recommended)
   const client = createGamesApiClient({
@@ -26,7 +27,7 @@ async function main() {
     const searchResponse = await client.gamesByGameName({
       name: 'Super Mario',
       fields: 'overview,rating,players',
-      include: 'boxart,platform',
+      include: 'boxart,banner,platform',
     })
 
     console.log(`Found ${searchResponse.data.count} games`)

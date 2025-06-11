@@ -4,8 +4,6 @@ import fs from 'fs'
 
 const API_KEY = process.env.THE_GAMES_DB_API_KEY as string
 
-console.log('API_KEY:', API_KEY)
-
 const client = createGamesApiClient({
   provider: 'tgdb',
   apiKey: API_KEY,
